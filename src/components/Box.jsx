@@ -1,16 +1,14 @@
-// import { useState } from "react";
-import { useState } from "react";
 import "./Box.css";
 import List from "./List";
 let Box = ({ setName, setAge, setData, name, age, data }) => {
 
-  let [val,setVal]=useState();
+  
 
   const clearUI = (e) => {
     setName("");
     setAge("");
   };
-  // console.log(data);
+
 
   const clearAll=()=>{
     setData([]);
@@ -18,7 +16,7 @@ let Box = ({ setName, setAge, setData, name, age, data }) => {
 
   const saveButton = (e) => {
     e.preventDefault();
-    // console.log("clicked");
+    
 
     if(name && age){
       if(isNaN(age)){
@@ -43,17 +41,7 @@ let Box = ({ setName, setAge, setData, name, age, data }) => {
     else{
       alert("Please fill all entries")
     }
-    // setData([
-    //   ...data,
-    //   {
-    //     name: name,
-    //     age: age,
-    //     id: Math.random() * 1000
-    //   },
-    // ]);
 
-    // setName("");
-    // setAge("");
   };
 
   return (
@@ -79,7 +67,6 @@ let Box = ({ setName, setAge, setData, name, age, data }) => {
                     value={age}
                     onChange={(e) => {
                       setAge(e.target.value);
-                      setVal(e.target.value)
                     }}
                     className="ageInput"
                   />
@@ -100,14 +87,14 @@ let Box = ({ setName, setAge, setData, name, age, data }) => {
               <h3>Users</h3>
               <div className="header">
                 <span>Full Name</span>
-                <span>Marks</span>
-                {/* <span></span> */}
+                <span>Age</span>
+            
               </div>
               <div className="list-items">
-                {/* <List data={data} /> */}
+         
 
                 {data.map((list) =>
-                  // console.log(List)
+                  
                   <List element={list} name={list.name} age={list.age} key={list.id} data={data} setData={setData} />
                 )}
 

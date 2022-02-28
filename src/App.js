@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import Nav from "./components/Nav";
+import Box from "./components/Box";
+import "./App.css";
+import { useState } from "react";
 
-function App() {
+let App = () => {
+  let [name, setName] = useState("")
+  let [age, setAge] = useState("");
+
+  let [data, setData] = useState([]);
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="cont">
+        <Nav />
+        <Box setName={setName} setAge = {setAge} setData = {setData} name = {name} age={age} data = {data}/>
+      </div>
+    </>
   );
-}
+};
 
 export default App;
